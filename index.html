@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>CSS Tooltip Example</title>
+      <style>
+            *{
+                  width: fit-content;
+                  margin: auto;
+            }
+
+            .tooltip-container {
+                  margin-top: 200px;
+                  display: flex;
+                  flex-direction: row;
+                  gap: 20px;
+            }
+
+            .tooltip {
+                  position: relative;
+                  display: inline-block;
+                  margin: 10px;
+            }
+
+            .tooltip .tooltip-text {
+                  visibility: hidden;
+                  /* width: 120px; */
+                  background-color: #333;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 5px;
+                  padding: 10px;
+                  position: absolute;
+                  z-index: 1;
+                  opacity: 0;
+                  transition: opacity 0.3s;
+            }
+
+            .tooltip.top .tooltip-text {
+                  bottom: 125%;
+                  left: 50%;
+                  transform: translateX(-50%);
+            }
+
+            .tooltip.right .tooltip-text {
+                  top: 50%;
+                  left: 125%;
+                  transform: translateY(-50%);
+            }
+
+            .tooltip.bottom .tooltip-text {
+                  top: 125%;
+                  left: 50%;
+                  transform: translateX(-50%);
+            }
+
+            .tooltip.left .tooltip-text {
+                  top: 50%;
+                  right: 125%;
+                  transform: translateY(-50%);
+            }
+
+            .tooltip:hover .tooltip-text {
+                  visibility: visible;
+                  opacity: 1;
+            }
+
+            button {
+                  padding: 10px 20px;
+                  font-size: 16px;
+                  cursor: pointer;
+                  border: none;
+                  border-radius: 5px;
+                  background-color: #007bff;
+                  color: white;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>CSS Tooltip</h1>
+      <div class="tooltip-container">
+            <div class="tooltip left">
+                  <button>Left</button>
+                  <span class="tooltip-text">Left</span>
+            </div>
+            <div class="tooltip top">
+                  <button>Top</button>
+                  <span class="tooltip-text">Top</span>
+            </div>
+            <div class="tooltip bottom">
+                  <button>Bottom</button>
+                  <span class="tooltip-text">Bottom</span>
+            </div>
+            <div class="tooltip right">
+                  <button>Right</button>
+                  <span class="tooltip-text">Right</span>
+            </div>
+      </div>
+</body>
+
+</html>
